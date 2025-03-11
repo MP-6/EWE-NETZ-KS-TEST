@@ -18,7 +18,7 @@
             color: white;
             padding: 20px;
             text-align: center;
-                }
+        }
         
         footer {
             background-color: #005f96; /* EWE NETZ Blau */
@@ -56,6 +56,25 @@
             background-color: #00A888; /* EWE NETZ Grün 2 */
         }
         
+        .chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .chat-button {
+            background-color: #F59A32; /* EWE NETZ Orange */
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .chat-button:hover {
+            background-color: #F7CD00; /* EWE NETZ Gelb */
+        }
     </style>
 </head>
 <body>
@@ -77,21 +96,23 @@
     
     <a href="#" class="button">Mehr Erfahren</a>
 </div>
-        <script type="text/javascript" charset="utf-8">
-  (function (g, e, n, es, ys) {
-    g['_genesysJs'] = e;
-    g[e] = g[e] || function () {
-      (g[e].q = g[e].q || []).push(arguments)
-    };
-    g[e].t = 1 * new Date();
-    g[e].c = es;
-    ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
-  })(window, 'Genesys', 'https://apps.mypurecloud.de/genesys-bootstrap/genesys.min.js', {
-    environment: 'prod-euc1',
-    deploymentId: '2e443793-8357-4f12-9ff5-9739d4d3c51b'
-  });
-</script>
 
+<!-- Genesys Chat Snippet -->
+<div class="chat-container">
+    <button class="chat-button" onclick="startChat()">💬</button>
+</div>
+
+<script type="text/javascript">
+    function startChat() {
+        // Genesys Chat Snippet einfügen
+        (function(w,d,s,h,e,t) {
+            w['GenesysChat'] = w['GenesysChat'] || [];
+            e = d.createElement(s); e.async = true;
+            e.src = h; t = d.getElementsByTagName(s)[0];
+            t.parentNode.insertBefore(e, t);
+        })(window, document, 'script', 'https://YOUR_GENESYS_CHAT_SNIPPET_URL');
+    }
+</script>
 
 <footer>
     <p>&copy; 2025 EWE Netz GmbH - Alle Rechte vorbehalten</p>
