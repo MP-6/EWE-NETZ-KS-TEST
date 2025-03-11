@@ -38,6 +38,7 @@
             background-position: center;
             border-radius: 8px;
             color: white; /* Damit der Text auf dem Bild gut lesbar ist */
+            text-align: center;
         }
         
         .button {
@@ -98,20 +99,19 @@
 </div>
 
 <!-- Genesys Chat Snippet -->
-<div class="chat-container">
-    <button class="chat-button" onclick="startChat()">💬</button>
-</div>
-
-<script type="text/javascript">
-    function startChat() {
-        // Genesys Chat Snippet einfügen
-        (function(w,d,s,h,e,t) {
-            w['GenesysChat'] = w['GenesysChat'] || [];
-            e = d.createElement(s); e.async = true;
-            e.src = h; t = d.getElementsByTagName(s)[0];
-            t.parentNode.insertBefore(e, t);
-        })(window, document, 'script', 'https://YOUR_GENESYS_CHAT_SNIPPET_URL');
-    }
+<script type="text/javascript" charset="utf-8">
+  (function (g, e, n, es, ys) {
+    g['_genesysJs'] = e;
+    g[e] = g[e] || function () {
+      (g[e].q = g[e].q || []).push(arguments)
+    };
+    g[e].t = 1 * new Date();
+    g[e].c = es;
+    ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
+  })(window, 'Genesys', 'https://apps.mypurecloud.de/genesys-bootstrap/genesys.min.js', {
+    environment: 'prod-euc1',
+    deploymentId: '2e443793-8357-4f12-9ff5-9739d4d3c51b'
+  });
 </script>
 
 <footer>
