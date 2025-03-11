@@ -1,59 +1,136 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EWE Netz</title>
+    <title>EWE Netz – Testseite</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #C8D200; /* EWE NETZ Grün */
-            color: #005f96; /* EWE NETZ Blau */
-            text-align: center;
             margin: 0;
             padding: 0;
+            background-color: #005f96;
         }
         header {
-            background-color: #F7CD00; /* EWE NETZ Gelb */
+            background-color: #C8D200;
             padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #C8D200;
         }
-        h1 {
-            color: #005f96; /* EWE NETZ Blau */
+        nav {
+            background-color: #005f96;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #ffffff;
+        }
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
         .content {
             padding: 20px;
+            text-align: center;
         }
-        .button {
-            background-color: #00A888; /* EWE NETZ Grün 2 */
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            display: inline-block;
-            margin: 10px;
-            border-radius: 5px;
+        .content h2 {
+            color: #003366;
         }
-        .button:hover {
-            background-color: #71D54C; /* EWE NETZ Grün 3 */
+        .content p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #333;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .grid-item {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
         }
         footer {
-            background-color: #F59A32; /* EWE NETZ Orange */
-            padding: 10px;
-            margin-top: 20px;
+            background-color: #333;
             color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>Willkommen bei EWE Netz</h1>
+        EWE Netz – Testseite
     </header>
-    <div class="content">
-        <p>Ihre zuverlässige Energieversorgung in Ihrer Region.</p>
-        <a href="#" class="button">Mehr erfahren</a>
+
+    <nav>
+        <a href="#">Start</a>
+        <a href="#">Über uns</a>
+        <a href="#">Services</a>
+        <a href="#">Kontakt</a>
+    </nav>
+
+    <div class="hero">
+        <img src="https://source.unsplash.com/1200x500/?energy,city" alt="Energie Versorgung">
+        <h1>Willkommen bei EWE Netz</h1>
+        <p>Ihr Partner für eine nachhaltige Energieversorgung.</p>
     </div>
+
+    <div class="content">
+        <h2>Unsere Dienstleistungen</h2>
+        <p>Wir bieten innovative Lösungen für eine stabile und umweltfreundliche Energieversorgung.</p>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="https://source.unsplash.com/400x250/?electricity,grid" alt="Stromnetz">
+            <h3>Netzversorgung</h3>
+            <p>Wir sorgen für eine zuverlässige Energieinfrastruktur.</p>
+        </div>
+        <div class="grid-item">
+            <img src="https://source.unsplash.com/400x250/?solar,wind" alt="Erneuerbare Energien">
+            <h3>Erneuerbare Energien</h3>
+            <p>Unser Ziel ist eine nachhaltige Zukunft mit grüner Energie.</p>
+        </div>
+        <div class="grid-item">
+            <img src="https://source.unsplash.com/400x250/?technology,innovation" alt="Technologie">
+            <h3>Technologische Innovation</h3>
+            <p>Wir setzen auf modernste Technik für maximale Effizienz.</p>
+        </div>
+    </div>
+
     <footer>
-        &copy; 2024 EWE Netz. Alle Rechte vorbehalten.
+        © 2025 EWE Netz – Testversion
     </footer>
+
+    <!-- Genesys Chat-Skript -->
     <script type="text/javascript" charset="utf-8">
       (function (g, e, n, es, ys) {
         g['_genesysJs'] = e;
@@ -72,5 +149,6 @@
         deploymentId: '2e443793-8357-4f12-9ff5-9739d4d3c51b'
       });
     </script>
+
 </body>
 </html>
