@@ -113,7 +113,22 @@
     environment: 'prod-euc1',
     deploymentId: '2e443793-8357-4f12-9ff5-9739d4d3c51b'
   });
+
+  // --- Automatisches Clear Conversation nach 15 Minuten ---
+  window.addEventListener('load', function() {
+    // Prüfen, ob das Widget geladen ist
+    if (Genesys && Genesys('messaging')) {
+      var messaging = Genesys('messaging');
+
+      // Timer auf 15 Minuten (900.000 ms)
+      setTimeout(function() {
+        messaging.clearConversation();
+        console.log('Conversation automatisch gelöscht.');
+      }, 15 * 60 * 1000);
+    }
+  });
 </script>
+
 
 <footer>
     <p>&copy; 2025 EWE Netz GmbH - Alle Rechte vorbehalten</p>
@@ -121,3 +136,4 @@
 
 </body>
 </html>
+
