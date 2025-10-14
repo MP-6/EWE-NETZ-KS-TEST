@@ -99,7 +99,6 @@
     <a href="#" class="button">Mehr Erfahren</a>
 </div>
 
-<!-- Genesys Chat Snippet -->
 <script type="text/javascript" charset="utf-8">
   (function (g, e, n, es, ys) {
     g['_genesysJs'] = e;
@@ -114,20 +113,25 @@
     deploymentId: '2e443793-8357-4f12-9ff5-9739d4d3c51b'
   });
 
-  // --- Automatisches Clear Conversation nach 15 Minuten ---
+  // --- Automatisches Clear Conversation für jede neue Konversation ---
   window.addEventListener('load', function() {
-    // Prüfen, ob das Widget geladen ist
-    if (Genesys && Genesys('messaging')) {
-      var messaging = Genesys('messaging');
+    Genesys('messaging', 'on', 'ready', function(messaging) {
+      console.log('Messaging Widget ist bereit.');
 
-      // Timer auf 15 Minuten (900.000 ms)
-      setTimeout(function() {
-        messaging.clearConversation();
-        console.log('Conversation automatisch gelöscht.');
-      }, 1 * 60 * 1000);
-    }
+      // Jedes Mal, wenn eine neue Konversation gestartet wird
+      messaging.on('conversation:created', function(conversation) {
+        console.log('Neue Konversation gestartet:', conversation);
+
+        // Timer auf 15 Minuten (900.000 ms)
+        setTimeout(function() {
+          messaging.clearConversation();
+          console.log('Conversation automatisch nach 15 Minuten gelöscht.');
+        }, 15 * 60 * 1000);
+      });
+    });
   });
 </script>
+
 
 
 <footer>
@@ -136,5 +140,6 @@
 
 </body>
 </html>
+
 
 
