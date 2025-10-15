@@ -110,38 +110,6 @@
     ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
   })(window, 'Genesys', 'https://apps.mypurecloud.de/genesys-bootstrap/genesys.min.js', {
     environment: 'prod-euc1',
-    deploymentId: '2e443793-8357-4f12-9ff5-9739d4d3c51b'
-  });
-
-  // --- Automatisches Clear Conversation für jede neue Konversation ---
-  window.addEventListener('load', function() {
-    Genesys('messaging', 'on', 'ready', function(messaging) {
-      console.log('Messaging Widget ist bereit.');
-
-      // Jedes Mal, wenn eine neue Konversation gestartet wird
-      messaging.on('conversation:created', function(conversation) {
-        console.log('Neue Konversation gestartet:', conversation);
-
-        // Timer auf 15 Minuten (900.000 ms)
-        setTimeout(function() {
-          messaging.clearConversation();
-          console.log('Conversation automatisch nach 15 Minuten gelöscht.');
-        }, 1 * 60 * 1000);
-      });
-    });
-  });
-</script>
-<script type="text/javascript" charset="utf-8">
-  (function (g, e, n, es, ys) {
-    g['_genesysJs'] = e;
-    g[e] = g[e] || function () {
-      (g[e].q = g[e].q || []).push(arguments)
-    };
-    g[e].t = 1 * new Date();
-    g[e].c = es;
-    ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
-  })(window, 'Genesys', 'https://apps.mypurecloud.de/genesys-bootstrap/genesys.min.js', {
-    environment: 'prod-euc1',
     deploymentId: '9e388ca2-f565-4584-9b9f-3f928cc126d4'
   });
 </script>
@@ -153,6 +121,7 @@
 
 </body>
 </html>
+
 
 
 
